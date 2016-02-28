@@ -4,6 +4,14 @@ Add Redis commands execution support in Org-mode Babel.
 
 This package is referenced from [[https://github.com/krisajenkins/ob-mongo][ob-mongo.el]].
 
+* Installation
+
+ob-redis.el is available in MELPA.
+
+You can install it through:
+
+=[M-x package-install ob-redis RET]=
+
 * Usage
 
 ** example
