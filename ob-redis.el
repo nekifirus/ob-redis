@@ -1,12 +1,11 @@
-;;; ob-redis.el --- Execute mongodb queries within org-mode blocks.
-;; Copyright 2013 Kris Jenkins
+;;; ob-redis.el --- Execute Redis queries within org-mode blocks.
+;; Copyright 2016 stardiviner
 
-;; Author: Kris Jenkins <krisajenkins@gmail.com>
-;; Maintainer: Kris Jenkins <krisajenkins@gmail.com>
-;; Keywords: org babel mongo mongodb
-;; Package-Version: 20130718.732
+;; Author: stardiviner <numbchild@gmail.com>
+;; Maintainer: stardiviner <numbchild@gmail.com>
+;; Keywords: org babel redis
 ;; URL: https://github.com/stardiviner/ob-redis
-;; Created: 17th July 2013
+;; Created: 28th Feb 2016
 ;; Version: 0.0.1
 ;; Package-Requires: ((org "8"))
 
