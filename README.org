@@ -1,0 +1,21 @@
+* About
+
+Add Redis commands execution support in Org-mode Babel.
+
+This package is referenced from [[https://github.com/krisajenkins/ob-mongo][ob-mongo.el]].
+
+* Usage
+
+** example
+
+#+BEGIN_EXAMPLE
+#+BEGIN_SRC redis db: 127.0.0.1:6379
+SET myname "stardiviner"
+GET myname
+#+END_SRC
+
+#+RESULTS:
+: 127.0.0.1:6379> OK
+: 127.0.0.1:6379> stardiviner
+: 127.0.0.1:6379> 
+#+END_EXAMPLE
