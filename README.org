@@ -17,13 +17,17 @@ You can install it through:
 ** example
 
 #+BEGIN_EXAMPLE
-#+BEGIN_SRC redis db: 127.0.0.1:6379
+#+BEGIN\under{}SRC redis db: 127.0.0.1:6379
 SET myname "stardiviner"
 GET myname
-#+END_SRC
+#+END\under{}SRC
 
 #+RESULTS:
 : 127.0.0.1:6379> OK
 : 127.0.0.1:6379> stardiviner
 : 127.0.0.1:6379> 
 #+END_EXAMPLE
+
+** options
+
+The babel header argument ~db:~ can specify your redis server ip address.
