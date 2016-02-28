@@ -21,7 +21,7 @@
   "org-mode blocks for MongoDB."
   :group 'org)
 
-(defcustom ob-redis:default-db nil
+(defcustom ob-redis:default-db "127.0.0.1:6379"
   "Default Redis database."
   :group 'ob-redis
   :type 'string)
