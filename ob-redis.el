@@ -18,7 +18,7 @@
 (require 'ob)
 
 (defgroup ob-redis nil
-  "org-mode blocks for MongoDB."
+  "org-mode blocks for Redis."
   :group 'org)
 
 (defcustom ob-redis:default-db "127.0.0.1:6379"
