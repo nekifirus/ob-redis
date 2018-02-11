@@ -6,11 +6,7 @@ This package is referenced from [[https://github.com/krisajenkins/ob-mongo][ob-m
 
 * Installation
 
-ob-redis.el is available in MELPA.
-
-You can install it through:
-
-=[M-x package-install ob-redis RET]=
+I put it in Org-mode contrib/ now.
 
 * Usage
 
