@@ -1,29 +1,31 @@
 * About
+Fork from original [[https://github.com/stardiviner/ob-redis][ob-redis]] writen by [[<numbchild@gmail.com>][stardiviner]] in Feb 2016
+Fix some bugs and allow user to set host, port and db-num of redis database
 
-Add Redis commands execution support in Org-mode Babel.
+Add Redis commands execution support in Org-mode Babel over redis-cli
 
 This package is referenced from [[https://github.com/krisajenkins/ob-mongo][ob-mongo.el]].
 
 * Installation
 
-I put it in Org-mode contrib/ now.
+Original package in Org-mode contrib/ now. This fork only on this github yet
 
 * Usage
 
 ** example
 
 #+BEGIN_EXAMPLE
-#+BEGIN\under{}SRC redis db: 127.0.0.1:6379
-SET myname "stardiviner"
+#+BEGIN\under{}SRC redis :host 127.0.0.1 :post 6379 :db 0
+SET myname "nekifirus"
 GET myname
 #+END\under{}SRC
 
 #+RESULTS:
-: 127.0.0.1:6379> OK
-: 127.0.0.1:6379> stardiviner
-: 127.0.0.1:6379> 
+nekifirus
 #+END_EXAMPLE
 
 ** options
 
-The babel header argument ~db:~ can specify your redis server ip address.
+The babel header argument ~:host~ can specify your redis database ip-address
+The babel header argument ~:port~ can specify your redis database port
+The babel header argument ~:db~ can specify your redis database number
