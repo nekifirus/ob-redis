@@ -1,5 +1,5 @@
 * About
-Fork from original [[https://github.com/stardiviner/ob-redis][ob-redis]] writen by [[<numbchild@gmail.com>][stardiviner]] in Feb 2016
+Fork from original [[https://github.com/stardiviner/ob-redis][ob-redis]] writen by [[mailto:numbchild@gmail.com][stardiviner]] in Feb 2016
 Fix some bugs and allow user to set host, port and db-num of redis database
 
 Add Redis commands execution support in Org-mode Babel over redis-cli
