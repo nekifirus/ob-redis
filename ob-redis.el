@@ -3,15 +3,21 @@
 
 ;; Author: stardiviner <numbchild@gmail.com>
 ;; Maintainer: stardiviner <numbchild@gmail.com>
+;; Maintainer: nekifirus <nekifirus@gmail.com>
 ;; Keywords: org babel redis
 ;; URL: https://github.com/stardiviner/ob-redis
 ;; Created: 28th Feb 2016
-;; Version: 0.0.1
+;; Modified: 1th Dec 2019
+;; Version: 0.0.2
 ;; Package-Requires: ((org "8"))
 
 ;;; Commentary:
 ;;
 ;; Execute Redis queries within org-mode blocks.
+;; Can set parameters
+;; :host - ip-address of redis host
+;; :port - port of redis host
+;; :db - db number in redis
 
 ;;; Code:
 (require 'org)
@@ -21,19 +27,32 @@
   "org-mode blocks for Redis."
   :group 'org)
 
-(defcustom ob-redis:default-db "127.0.0.1:6379"
-  "Default Redis database."
+(defcustom ob-redis:default-host "127.0.0.1"
+  "Default ip-address for redis host."
   :group 'ob-redis
   :type 'string)
 
+(defcustom ob-redis:default-port 6379
+  "Default port for redis host."
+  :group 'ob-redis
+  :type 'integer)
+
+(defcustom ob-redis:default-db 0
+  "Default Redis database."
+  :group 'ob-redis
+  :type 'integer)
+
 ;;;###autoload
 (defun org-babel-execute:redis (body params)
-  "org-babel redis hook."
-  (let* ((db (or (cdr (assoc :db params))
-                 ob-redis:default-db))
-         (cmd (mapconcat 'identity (list "redis-cli") " ")))
-    (org-babel-eval cmd body)
-    ))
+  "Org-babel redis hook.
+Argument BODY body of org source block.
+Argument PARAMS org-babel params."
+  (let* ((host (shell-quote-argument
+                (alist-get :host params ob-redis:default-host)))
+         (port (alist-get :port params ob-redis:default-port))
+         (db (alist-get :db params ob-redis:default-db))
+         (cmd (format "redis-cli -h %s -p %s -n %s" host port db)))
+    (org-babel-eval cmd body)))
 
 ;;;###autoload
 (eval-after-load "org"
