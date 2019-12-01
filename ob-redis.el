@@ -47,12 +47,10 @@
   "Org-babel redis hook.
 Argument BODY body of org source block.
 Argument PARAMS org-babel params."
-  (let* ((host (or (cdr (assoc :host params))
-                   ob-redis:default-host))
-         (port (or (cdr (assoc :port params))
-                   ob-redis:default-port))
-         (db (or (cdr (assoc :db params))
-                 ob-redis:default-db))
+  (let* ((host (shell-quote-argument
+                (alist-get :host params ob-redis:default-host)))
+         (port (alist-get :port params ob-redis:default-port))
+         (db (alist-get :db params ob-redis:default-db))
          (cmd (format "redis-cli -h %s -p %s -n %s" host port db)))
     (org-babel-eval cmd body)))
 
